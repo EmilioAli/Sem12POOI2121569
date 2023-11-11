@@ -1,12 +1,9 @@
 public class Main{
     public static void main(String[] args) {
-        // Crear un objeto de la clase Cadena
         Cadena miCadena = new Cadena("Lista de Ejercicios");
-
-        // Visualizar la cadena y su longitud
+        
         miCadena.visualizar();
-
-        // Obtener y visualizar un carácter en una posición específica
+        
         int indice = 3;
         char caracterEnPosicion = miCadena.caracter(indice);
 
@@ -15,5 +12,36 @@ public class Main{
         } else {
             System.out.println("La posición " + indice + " está fuera del rango.");
         }
+    }
+}
+
+public class Cadena {
+    private int longitud;
+    private String cadena;
+
+    public Cadena(String cadena) {
+        this.cadena = cadena;
+        this.longitud = cadena.length();
+    }
+
+    public int getLongitud() {
+        return longitud;
+    }
+
+    public String getCadena() {
+        return cadena;
+    }
+
+    public char caracter(int i) {
+        if (i >= 0 && i < longitud) {
+            return cadena.charAt(i);
+        } else {
+            return (char) -1;
+        }
+    }
+
+    public void visualizar() {
+        System.out.println("Cadena: " + cadena);
+        System.out.println("Longitud: " + longitud);
     }
 }
