@@ -19,7 +19,45 @@ public class Main{
     }
 }
 
+import java.util.Scanner;
 
+public class Hora {
+    private int horas;
+    private int minutos;
+    private int segundos;
+
+    public Hora() {
+        this.horas = 0;
+        this.minutos = 0;
+        this.segundos = 0;
+    }
+
+    public Hora(int horas, int minutos, int segundos) {
+        this.horas = horas;
+        this.minutos = minutos;
+        this.segundos = segundos;
+    }
+
+    public void mostrarHora() {
+        System.out.printf("%02d:%02d:%02d\n", horas, minutos, segundos);
+    }
+
+    public void sumarHoras(Hora otraHora) {
+        this.horas += otraHora.horas;
+        this.minutos += otraHora.minutos;
+        this.segundos += otraHora.segundos;
+
+        if (this.segundos >= 60) {
+            this.segundos -= 60;
+            this.minutos++;
+        }
+
+        if (this.minutos >= 60) {
+            this.minutos -= 60;
+            this.horas++;
+        }
+    }
+}
 
 
 
